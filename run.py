@@ -5,7 +5,7 @@ import torch
 import constants as c
 from loader import Loader
 from model import GenModel
-from utils import list_paths, calculate_psnr, var2np
+from utils import list_paths, calculate_psnr, var2np, makedir
 from scipy.misc import imsave
 from loader import float32_to_uint8
 
@@ -34,7 +34,7 @@ class Runner:
             psnr_all.append(psnr_frame)
 
             if save_images:
-                gen_folder = c.makedir(join(c.IMG_SAVE_DIR, gt_path.split('/')[-2]))
+                gen_folder = makedir(join(c.IMG_SAVE_DIR, gt_path.split('/')[-2]))
                 gen_path = join(gen_folder, gt_path.split('/')[-1])
                 gen_uint8 = float32_to_uint8(gen)
                 imsave(gen_path, var2np(gen_uint8))
