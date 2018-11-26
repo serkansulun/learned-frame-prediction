@@ -14,10 +14,10 @@ SEED = 1    # None for random
 CODE_DIR = os.getcwd()
 MAIN_DIR = os.path.abspath(os.path.join(CODE_DIR, os.pardir))
 TEST_DIR = os.path.join(MAIN_DIR, 'Videos')
-MODEL_DIR = makedir(os.path.join(MAIN_DIR, 'Models/'))
+MODEL_DIR = os.path.join(MAIN_DIR, 'Models')
 
 # directory for saved images
-IMG_SAVE_DIR = makedir(os.path.join(MAIN_DIR, 'Images'))
+IMG_SAVE_DIR = makedir(os.path.join(MAIN_DIR, 'Predictions'))
 
 CUDA = torch.cuda.is_available()
 
