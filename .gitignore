@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# User defined
+Videos/
+*.pt
+Predictions/
+*.png
+
 # C extensions
 *.so
 

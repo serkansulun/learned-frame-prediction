@@ -11,8 +11,7 @@ LOAD_GEN = 'MSE_only'
 
 SEED = 1    # None for random
 
-CODE_DIR = os.getcwd()
-MAIN_DIR = os.path.abspath(os.path.join(CODE_DIR, os.pardir))
+MAIN_DIR = os.getcwd()
 TEST_DIR = os.path.join(MAIN_DIR, 'Videos')
 MODEL_DIR = os.path.join(MAIN_DIR, 'Models')
 
