@@ -5,7 +5,7 @@ import torch
 import constants as c
 from loader import Loader
 from model import GenModel
-from utils import list_paths, calculate_psnr, var2np, makedir
+from utils import list_paths, calculate_psnr, var2np, makedir, plot_prediction
 from scipy.misc import imsave
 from loader import float32_to_uint8
 
@@ -40,6 +40,10 @@ class Runner:
                 imsave(gen_path, var2np(gen_uint8))
 
         psnr_mean = np.mean(psnr_all)
+
+        # Plotting
+        video_name = gt_path.split('/')[-2]
+        plot_prediction(video_name, psnr_all)
 
         return psnr_mean
 

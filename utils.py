@@ -3,6 +3,7 @@ from math import log
 import numpy as np
 import torch
 import constants as c
+import matplotlib.pyplot as plt
 
 
 def makedir(directory):
@@ -67,3 +68,14 @@ def var2np(x, keepdims=False):
     if not keepdims:
         x = np.squeeze(x)
     return x
+
+
+def plot_prediction(video_name, psnr_all):
+    frames = range(c.HIST_LEN + 1, c.HIST_LEN + 1 + len(psnr_all))
+    plt.plot(frames, psnr_all, c='r')
+    plt.title(video_name)
+    plt.xlabel('Frame #')
+    plt.ylabel('Prediction PSNR (dB)')
+    plt.grid()
+    plt.savefig(os.path.join(c.FIG_SAVE_DIR, video_name), dpi=150)
+    plt.clf()

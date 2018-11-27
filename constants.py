@@ -15,8 +15,8 @@ MAIN_DIR = os.getcwd()
 TEST_DIR = os.path.join(MAIN_DIR, 'Videos')
 MODEL_DIR = os.path.join(MAIN_DIR, 'Models')
 
-# directory for saved images
 IMG_SAVE_DIR = makedir(os.path.join(MAIN_DIR, 'Predictions'))
+FIG_SAVE_DIR = makedir(os.path.join(MAIN_DIR, 'Figures'))
 
 CUDA = torch.cuda.is_available()
 
